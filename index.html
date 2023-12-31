@@ -18,6 +18,7 @@
 <body>
 	<div id="mainDiv">
 		<div id="content">
+		
 			<div id="code">
 				<span class="comments">/**</span><br />
 				<span class="space"/><span class="comments">* Born a boy in 1990,</span><br />
@@ -33,12 +34,12 @@
 				u.accepted(i);<br />
 				<span class="comments">// Since then, I miss u every day.</span><br />
 				i.miss(u);<br /><br />
-				<span class="comments">// October 10th is a good day, because this is your birthday.</span><br />
+				<span class="comments">// October 10th is a good day, because that is your birthday.</span><br />
 				u.birthday(10, 10);<br />
 				<span class="comments">// I can't send you other valuable things,</span><br />
 				<span class="comments">// but write down my love for you here until the end of the world.</span><br />
-				<span class="keyword">boolean</span> isLive = <span class="keyword">true</span>;<br />
-				<span class="keyword">while</span> (isLive) {<br />
+				<span class="keyword">boolean</span> isShiGuangAlive = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isShiGuangAlive) {<br />
 				<span class="placeholder"/>i.miss(u);<br />
 				<span class="placeholder"/>i.love(u);<br />
 				}<br /><br />
@@ -47,7 +48,13 @@
 				<span class="placeholder"/>i.happy(true);<br />
 				}<span class="keyword">else</span> {<br />
 				<span class="placeholder"/>i.happy(false);<br />
+				<span class="placeholder"/>i.makeHappy(u);<br />
 				}<br />
+				<br /><br />
+				<b>
+				I love three things in the world, sun, moon, and you,<br/>
+				sun for morning, moon for night, and you forever.
+				</b>
 			</div>
 			<div id="loveHeart">
 				<canvas id="garden"></canvas>
@@ -64,14 +71,16 @@
 			</div>
 		</div>
 		<div id="copyright">
-			Copyright ©  <script> var mydate = new Date(); document.writeln(" " + mydate.getFullYear() + ''); </script> Love
+			Copyright ©  2017-<script> var mydate = new Date(); document.writeln("" + mydate.getFullYear() + ''); </script> Love Story
 		</div>
 	</div>
+	
 	<script type="text/javascript">
 		var width = $("#loveHeart").width() / 2;
 		var height = $("#loveHeart").height() / 2;
 		var offsetX = width;
 		var offsetY = height - 55;
+		
 		var together = new Date();
 		together.setFullYear(2017, 4, 9);
 		together.setHours(22);
@@ -102,5 +111,11 @@
 			$("#code").typewriter();
 		}
 	</script>
+<!--音乐部分-->
+<audio autoplay loop id="music">
+    <source src="lovestory.mp3" />
+</audio>
+<iframe  id="iframMusic" allow="autoplay" style="display:none" src="blank.mp3"></iframe>
+<script src="/js/music.js"></script>
 </body>
 </html>
